@@ -1,0 +1,189 @@
+{% extends 'courses/python/sttbase.html' %}
+
+{% block title %}Python Lists - TeekaY-X{% endblock %}
+
+{% block content %}
+
+<hr>
+
+
+
+<h2>Customize Sort Function</h2>
+
+<p>You can also customize your own function by using the keyword argument <code class="w3-codespan">key =<em> 
+function</em></code>.</p>
+<p>The function will return a number that will be used to sort the list (the 
+lowest number first):</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Sort the list based on how close the number is to 50:</p>
+<div class="w3-code notranslate pythonHigh">
+  def myfunc(n):<br>&nbsp; return abs(n - 50)<br><br>thislist = [100, 50, 65, 82, 23]<br>thislist.sort(key = 
+  myfunc)<br>print(thislist)
+</div>
+
+</div>
+
+<hr>
+<h2>Case Insensitive Sort</h2>
+
+<p>By default the <code class="w3-codespan">sort()</code> method is case sensitive,
+resulting in all capital letters being sorted before lower case letters:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Case sensitive sorting can give an unexpected result:</p>
+<div class="w3-code notranslate pythonHigh">
+  thislist = [&quot;banana&quot;, &quot;Orange&quot;, &quot;Kiwi&quot;, &quot;cherry&quot;]<br>thislist.sort()<br>print(thislist)
+</div>
+
+</div>
+
+<p>Luckily we can use built-in functions as key functions when sorting a list.</p>
+
+<p>So if you want a case-insensitive sort function, use str.lower as a key function:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Perform a case-insensitive sort of the list:</p>
+<div class="w3-code notranslate pythonHigh">
+  thislist = [&quot;banana&quot;, &quot;Orange&quot;, &quot;Kiwi&quot;, &quot;cherry&quot;]<br>thislist.sort(key 
+  = str.lower)<br>print(thislist)
+</div>
+
+</div>
+
+<hr>
+<h2>Reverse Order</h2>
+
+<p>What if you want to reverse the order of a list, regardless of the alphabet?</p>
+
+<p>The <code class="w3-codespan">reverse()</code> method reverses the current sorting order of the elements.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Reverse the order of the list items:</p>
+<div class="w3-code notranslate pythonHigh">
+  thislist = [&quot;banana&quot;, &quot;Orange&quot;, &quot;Kiwi&quot;, &quot;cherry&quot;]<br>thislist.reverse()<br>print(thislist)
+</div>
+</div>
+
+<hr />
+<h1>Python - Copy Lists</h1>
+<br />
+<h2>Copy a List</h2>
+<p>You cannot copy a list simply by typing <code class="w3-codespan">list2 = 
+list1</code>, because: <code class="w3-codespan">list2</code> will only be a <em>
+reference</em> to <code class="w3-codespan">list1</code>, and changes made in
+<code class="w3-codespan">list1</code> will automatically also be made in
+<code class="w3-codespan">list2</code>.</p>
+
+<p>There are ways to make a copy, one way is to use the built-in List 
+method <code class="w3-codespan">
+copy()</code>.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Make a copy of a list with the <code class="w3-codespan">copy()</code> method:</p>
+<div class="w3-code notranslate pythonHigh">
+thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]<br>mylist 
+  = thislist.copy()<br>
+  print(mylist)
+</div>
+
+</div>
+
+<p>Another way to make a copy is to use the built-in method <code class="w3-codespan">list()</code>.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Make a copy of a list with the <code class="w3-codespan">list()</code> method:</p>
+<div class="w3-code notranslate pythonHigh">
+thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]<br>mylist 
+  = list(thislist)<br>
+  print(mylist)
+</div>
+</div>
+
+<hr />
+<h1>Python - Join Lists</h1>
+<br />
+
+<h2>Join Two Lists</h2>
+<p>There are several ways to join, or concatenate, two or more lists in Python.</p>
+<p>One of the easiest ways are by using the <code class="w3-codespan">+</code> 
+operator.</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Join two list:</p>
+<div class="w3-code notranslate pythonHigh">
+  list1 = [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]<br>list2 = [1, 2, 3]<br><br>list3 = list1 + list2<br>
+  print(list3)</div>
+
+</div>
+
+<p>Another way to join two lists is by appending all the items from list2 into 
+list1, one by one:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Append list2 into list1:</p>
+<div class="w3-code notranslate pythonHigh">
+  list1 = [&quot;a&quot;, &quot;b&quot; , &quot;c&quot;]<br>list2 = [1, 2, 3]<br>
+  <br>for x in list2:<br>&nbsp; list1.append(x)<br><br>print(list1)</div>
+
+</div>
+
+<p>Or you can use the <code class="w3-codespan">extend()</code> 
+method, 
+which purpose is to add elements from one list to another 
+list:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+<p>Use the <code class="w3-codespan">extend()</code> method to add list2 at the end of list1:</p>
+<div class="w3-code notranslate pythonHigh">
+  list1 = [&quot;a&quot;, &quot;b&quot; , &quot;c&quot;]<br>list2 = [1, 2, 3]<br><br>list1.extend(list2)<br>
+  print(list1)</div>
+</div>
+
+<hr />
+<h1>Python - List Methods</h1>
+<br />
+<h2>List Methods</h2>
+<p>Python has a set of built-in methods that you can use on lists.</p>
+
+<table class="ws-table-all notranslate">
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+<tr><td>append()</td><td>Adds an element at 
+  the end of the list</td></tr>
+<tr><td>clear()</td><td>Removes all the 
+  elements from the list</td></tr>
+<tr><td>copy()</td><td>Returns a copy of the 
+  list</td></tr>
+<tr><td>count()</td><td>Returns the number of 
+  elements with the specified value</td></tr>
+<tr><td>extend()</td><td>Add the elements of a 
+  list (or any iterable), to the end of the current list</td></tr>
+<tr><td>index()</td><td>Returns the index of 
+  the first element with the specified value</td></tr>
+<tr><td>insert()</td><td>Adds an element at 
+  the specified position</td></tr>
+<tr><td>pop()</td><td>Removes the element at the 
+  specified position</td></tr>
+<tr><td>remove()</a></td><td>Removes the  
+  item with the specified value</td></tr>
+<tr><td>reverse()</td><td>Reverses the order 
+  of the list</td></tr>
+<tr><td>sort()</td><td>Sorts the list</td></tr>
+</table>
+
+
+ <!--end -->       
+
+{% endblock %}

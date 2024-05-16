@@ -1,0 +1,170 @@
+{% extends 'courses/python/sttbase.html' %}
+
+{% block title %}Python Data Types - TeekaY-X{% endblock %}
+
+{% block content %}
+
+
+          <h2>What is a Module?</h2> <p>
+            Consider a module to be the same as a code library.
+          </p>
+          <p>
+            A file containing a set of functions you want to include in your application.
+          </p>
+          <hr> <h2>Create a Module</h2> <p>
+            To create a module just save the code you want in a file with the file extension <code class="w3-codespan">.py</code>:
+          </p>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              Save this code in a file named <code class="w3-codespan">mymodule.py</code>
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              def greeting(name):<br>&nbsp; print(&quot;Hello, &quot; + name)
+            </div>
+          </div>
+          <h2>Use a Module</h2>  <p>
+            Now we can use the module we just created, by using the <code class="w3-codespan">import</code> statement:
+          </p>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              Import the module named mymodule, and call the greeting function:
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              import mymodule<br><br>mymodule.greeting(&quot;Jonathan&quot;)
+            </div>
+            
+          </div>
+          <div class="w3-panel w3-note">
+            <p>
+              <strong>Note:</strong> When using a function from a module, use the syntax: <em>module_name.function_name</em>.
+            </p>
+          </div>
+          <hr>  <h2>Variables in Module</h2>  <p>
+            The module can contain functions, as already described, but also variables of  all types (arrays, dictionaries, objects etc):
+          </p>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              Save this code in the file <code class="w3-codespan">mymodule.py</code>
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              person1 = {<br>&nbsp; &quot;name&quot;: &quot;John&quot;,<br>&nbsp; &quot;age&quot;: 36,<br>&nbsp;    &quot;country&quot;: &quot;Norway&quot;<br>}
+            </div>
+          </div>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              Import the module named mymodule, and access the person1 dictionary:
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              import mymodule<br><br>a = mymodule.person1[&quot;age&quot;]<br>print(a)
+            </div>
+            
+          </div>
+          <hr> 
+          
+          <hr> 
+          <h2>Naming a Module</h2>  <p>
+            You can name the module file whatever you like, but it must have the file extension  <code class="w3-codespan">.py</code>
+          </p>
+          <h2>Re-naming a Module</h2>  <p>
+            You can create an alias when you import a module, by using the <code class="w3-codespan">as</code> keyword:
+          </p>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              Create an alias for <code class="w3-codespan">mymodule</code> called <code class="w3-codespan">mx</code>:
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              import mymodule as mx<br><br>a = mx.person1[&quot;age&quot;]<br>print(a)
+            </div>
+            
+          </div>
+          <hr>  <h2>Built-in Modules</h2>  <p>
+            There are several built-in modules in Python, which you can import whenever you like.
+          </p>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              Import and use the <code class="w3-codespan">platform</code> module:
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              import platform<br><br>x = platform.system()<br>print(x)
+            </div>
+          
+          </div>
+          <hr>  <h2>Using the dir() Function</h2>  <p>
+            There is a built-in function to list all the function names (or variable  names) in a module. The <code class="w3-codespan">dir()</code> function:
+          </p>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              List all the defined names belonging to the platform module:
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              import platform<br><br>x = dir(platform)<br>print(x)
+            </div>
+            
+          </div>
+          <div class="w3-panel w3-note">
+            <p>
+              <strong>Note:</strong> The dir() function can be used on <em>all</em>    modules, also the ones you create yourself.
+            </p>
+          </div>
+          <hr>  <h2>Import From Module</h2>  <p>
+            You can choose to import only parts from a module, by using the <code class="w3-codespan">from</code> keyword.
+          </p>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              The module named <code class="w3-codespan">mymodule</code> has one function  and one dictionary:
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              def greeting(name):<br>&nbsp; print(&quot;Hello, &quot; + name)<br><br>person1    = {<br>&nbsp; &quot;name&quot;: &quot;John&quot;,<br>&nbsp; &quot;age&quot;: 36,<br>&nbsp; &quot;country&quot;:    &quot;Norway&quot;<br>}<br>
+            </div>
+          </div>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              Import only the person1 dictionary from the module:
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              from mymodule import person1<br><br>print (person1[&quot;age&quot;])<br>
+            </div>
+            
+          </div>
+          <div class="w3-panel w3-note">
+            <p>
+              <strong>Note:</strong> When importing using the <code class="w3-codespan">from</code>    keyword, do not use the module name when referring to elements in the module.    Example: <code class="w3-codespan">person1[&quot;age&quot;]</code>, <strong>not</strong>   <code class="w3-codespan"><strike>mymodule.person1[&quot;age&quot;]</strike></code>
+            </p>
+          </div>
+          <hr>  <h2>Where to Store a Module?</h2>  <p>
+            You can store the modules in the same directory as the rest of your python files, or you can choose a different location.
+          </p>
+          <p>
+            Python will start by searching the current directory, then it will search in every location described in the PYTHONPATH variable.
+          </p>
+          <p>
+            To see which locations that are described in the PYTHONPATH variable, check the sys.path property:
+          </p>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              List all the locations described in the PYTHONPATH property:
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              import sys<br><br>print(sys.path)
+            </div>
+            
+          </div>
+          <p>
+            To <em>add</em> locations to the PYTHONPATH variable use the set PYTHONPATH statement:
+          </p>
+          <div class="w3-example">
+            <h3>Example</h3> <p>
+              Add a new location to the PYTHONPATH property:
+            </p>
+            <div class="w3-code notranslate pythonHigh">
+              C:\Users\Your Name&gt;set PYTHONPATH = C:\Users\Your Name\python_modules<br>
+            </div>
+          
+          </div>
+          <div class="w3-panel w3-note">
+            <p>
+              <strong>Note:</strong> The dir() function can be used on <em>all</em>    modules.
+            </p>
+          </div>
+
+{% endblock %}

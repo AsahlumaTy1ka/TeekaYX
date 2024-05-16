@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/icon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-darkblue">
+            <a class="navbar-brand" href="/">TeekaY-X</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'courses' %}">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    
+  <!-- Footer -->
+  <footer class="bg-primary text-center ">
+    <!-- Grid container -->
+    <div class="container p-4">
+
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" target='_blank' href="https://www.facebook.com/profile.php?id=61555241895001" role="button"><i class="fab fa-facebook-f"></i></a>
+
+        <!-- Github -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" target='_blank' href="https://github.com/asahlumaty1ka" role="button"><i class="fab fa-github"></i></a>
+      </section>
+
+
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="{% url 'index' %}" class="text-dark">Home</a>
+              </li>
+              <li>
+                <a href="{% url 'courses' %}" class="text-dark">Courses</a>
+              </li>
+              <li>
+                <a href="{% url 'about' %}" class="text-dark">About</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h4 class="text-uppercase">Courses</h4>
+
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="{% url 'coursespy' %}" class="text-dark">Python</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      &copy; 2024 Copyright:
+      <a class="text-dark" href="/">TeekaY-X.com</a>
+    </div>
+  
+
+  </footer>
+
+    
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  
+</body>
+</html>

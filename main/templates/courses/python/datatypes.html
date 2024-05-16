@@ -1,0 +1,250 @@
+{% extends 'courses/python/sttbase.html' %}
+
+{% block title %}Python Data Types - TeekaY-X{% endblock %}
+
+{% block content %}
+
+<h2>Built-in Data Types</h2>
+<p>In programming, data type is an important concept.</p>
+<p>Variables can store data of different types, and different types can do 
+different things.</p>
+<p>Python has the following data types built-in by default, in these categories:</p>
+<table class="w3-table">
+  <tr>
+    <td style="width:160px;">Text Type:</td>
+    <td><code class="w3-codespan">str</code></td>
+  </tr>
+  <tr>
+    <td>Numeric Types:</td>
+    <td><code class="w3-codespan">int</code>, <code class="w3-codespan">float</code>,
+    <code class="w3-codespan">complex</code></td>
+  </tr>
+  <tr>
+    <td>Sequence Types:</td>
+    <td><code class="w3-codespan">list</code>, <code class="w3-codespan">tuple</code>, 
+    <code class="w3-codespan">range</code></td>
+  </tr>
+  <tr>
+    <td>Mapping Type:</td>
+    <td><code class="w3-codespan">dict</code></td>
+  </tr>
+  <tr>
+    <td>Set Types:</td>
+    <td><code class="w3-codespan">set</code>, <code class="w3-codespan">frozenset</code></td>
+  </tr>
+  <tr>
+    <td>Boolean Type:</td>
+    <td><code class="w3-codespan">bool</code></td>
+  </tr>
+  <tr>
+    <td>Binary Types:</td>
+    <td><code class="w3-codespan">bytes</code>, <code class="w3-codespan">bytearray</code>, 
+    <code class="w3-codespan">memoryview</code></td>
+  </tr>
+  <tr>
+    <td>None Type:</td>
+    <td><code class="w3-codespan">NoneType</code></td>
+  </tr>
+</table>
+
+<hr>
+<h2>Getting the Data Type</h2>
+
+<p>You can get the data type of any object by using the <code class="w3-codespan">type()</code> function:</p>
+
+<div class="w3-example">
+<h3>Example</h3>
+  <p>Print the data type of the variable x:</p>
+<div class="w3-code notranslate pythonHigh">
+x = 5<br>
+print(type(x))
+</div>
+
+</div>
+
+<hr>
+
+<h2>Setting the Data Type</h2>
+
+<p>In Python, the data type is set when you assign a value to a variable:</p>
+<style>
+#dtref td:nth-child(1) {
+  font-family: Consolas,"courier new";
+  font-size: 110%;
+}
+</style>
+<table id="dtref" class="ws-table-all notranslate table-responsive">
+<tr>
+<th style="min-width:350px">Example</th>
+<th>Data Type</th>
+
+</tr>
+<tr>
+<td>x = &quot;Hello World&quot;</td>
+<td>str</td>
+<td></td>
+</tr>
+<tr>
+<td>x = 20</td>
+<td>int</td>
+<td></td>
+</tr>
+<tr>
+<td>x = 20.5</td>
+<td>float</td>
+<td></td>
+</tr>
+<tr>
+<td>x = 1j</td>
+<td>complex</td>
+<td></td>
+</tr>
+<tr>
+<td>x = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</td>
+<td>list</td>
+<td></td>
+</tr>
+  <tr>
+<td>x = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)</td>
+<td>tuple</td>
+<td></td>
+  </tr>
+  <tr>
+<td>x = range(6)</td>
+<td>range</td>
+<td></td>
+  </tr>
+  <tr>
+<td>x = {&quot;name&quot; : &quot;John&quot;, &quot;age&quot; : 36}</td>
+<td>dict</td>
+<td></td>
+  </tr>
+  <tr>
+<td>x = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}</td>
+<td>set</td>
+<td></td>
+  </tr>
+  <tr>
+<td>x = frozenset({&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;})</td>
+<td>frozenset</td>
+<td></td>
+  </tr>
+  <tr>
+<td>x = True</td>
+<td>bool</td>
+<td></td>
+  </tr>
+  <tr>
+<td>x = b&quot;Hello&quot;</td>
+<td>bytes</td>
+<td></td>
+  </tr>
+  <tr>
+<td>x = bytearray(5)</td>
+<td>bytearray</td>
+<td></td>
+  </tr>
+<tr>
+<td>x = memoryview(bytes(5))</td>
+<td>memoryview</td>
+<td></td>
+</tr>
+<tr>
+<td>x = None</td>
+<td>NoneType</td>
+<td></td>
+</tr>
+</table>
+
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+
+
+</div>
+<hr>
+
+<h2>Setting the Specific Data Type</h2>
+<p>If you want to specify the data type, you can use the following 
+constructor functions:</p>
+
+<table id="dtref" class="ws-table-all notranslate">
+<tr>
+<th style="min-width:350px">Example</th>
+<th>Data Type</th>
+
+</tr>
+<tr>
+<td>x = str(&quot;Hello World&quot;)</td>
+<td>str</td>
+
+</tr>
+<tr>
+<td>x = int(20)</td>
+<td>int</td>
+
+</tr>
+<tr>
+<td>x = float(20.5)</td>
+<td>float</td>
+
+</tr>
+<tr>
+<td>x = complex(1j)</td>
+<td>complex</td>
+
+</tr>
+<tr>
+<td>x = list((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;))</td>
+<td>list</td>
+
+</tr>
+  <tr>
+<td>x = tuple((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;))</td>
+<td>tuple</td>
+
+  </tr>
+  <tr>
+<td>x = range(6)</td>
+<td>range</td>
+
+  </tr>
+  <tr>
+<td>x = dict(name=&quot;John&quot;, age=36)</td>
+<td>dict</td>
+
+  </tr>
+  <tr>
+<td>x = set((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;))</td>
+<td>set</td>
+
+  </tr>
+  <tr>
+<td>x = frozenset((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;))</td>
+<td>frozenset</td>
+
+  </tr>
+  <tr>
+<td>x = bool(5)</td>
+<td>bool</td>
+
+  </tr>
+  <tr>
+<td>x = bytes(5)</td>
+<td>bytes</td>
+
+  </tr>
+  <tr>
+<td>x = bytearray(5)</td>
+<td>bytearray</td>
+<td></td>
+  </tr>
+<tr>
+<td>x = memoryview(bytes(5))</td>
+<td>memoryview</td></td>
+</tr>
+</table>
+
+
+
+
+{% endblock %}
