@@ -3,6 +3,9 @@ from . import views
 from django.contrib import admin
 
 
+admin.site.site_title = "TeekaYX | Admin"
+admin.site.site_header = "TeekaYX | Administration"
+admin.site.index_title = "Site administration"
 
 urlpatterns = [
     path('courses/python/introduction/', views.pythonintro, name='pythonintro'),
@@ -48,6 +51,6 @@ urlpatterns = [
     path('courses/', views.courses, name='courses'),
     path('about/', views.about, name='about'),
     path('', views.index, name='index'),
-    
-    
+
+
 ]

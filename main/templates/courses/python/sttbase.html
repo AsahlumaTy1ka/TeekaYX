@@ -11,14 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" type="image/png"  href="{% static 'images/icon.png' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
- 
-  
-  
-   
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380855255756665"
+     crossorigin="anonymous"></script>
+
+
+
+
 </head>
 
 <body>
-    <div class='w3-sidebar w3-collapse' id='sidenav'>     
+    <div class='w3-sidebar w3-collapse' id='sidenav'>
         <a href='javascript:void(0)' onclick='close_menu()' class='w3-button w3-hide-large w3-large w3-display-topright' style='right:16px;padding:3px 12px;font-weight:bold;'>&times;</a>
         <h2 class="left">Python Tutorial</h2>
         <a target="_top" href="/courses/python/">Python HOME</a>
@@ -38,7 +40,7 @@
              <a class="dropdown-item" href="/courses/python/python_sets/">Python Sets</a>
              <a class="dropdown-item" href="/courses/python/python_dictionaries/">Python Dictionaries</a>
              <a class="dropdown-item" href="/courses/python/python_ifelse/">Python If...Else</a>
-                                               
+
              <a class="dropdown-item" href="/courses/python/python_whileloop/">Python While Loop</a>
              <a class="dropdown-item" href="/courses/python/python_forloop/">Python For Loop</a>
              <a class="dropdown-item" href="/courses/python/python_functions/">Python Functions</a>
@@ -65,12 +67,12 @@
              <a class="dropdown-item" href="/courses/python/python_filedel/">Python File Delete</a>
         <br>
               <br><br>
-  
+
         </div>
         <div class='w3-main w3-light-grey' id='belowtopnav' style='margin-left:250px;'>
-  
+
           <div class='w3-row w3-white'>
-            
+
             <div class='w3-col l10 m12' id='main'>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-darkblue">
@@ -106,7 +108,7 @@
                           <a class="dropdown-item" href="/courses/python/python_sets/">Python Sets</a>
                           <a class="dropdown-item" href="/courses/python/python_dictionaries/">Python Dictionaries</a>
                           <a class="dropdown-item" href="/courses/python/python_ifelse/">Python If...Else</a>
-                                                            
+
                           <a class="dropdown-item" href="/courses/python/python_whileloop/">Python While Loop</a>
                           <a class="dropdown-item" href="/courses/python/python_forloop/">Python For Loop</a>
                           <a class="dropdown-item" href="/courses/python/python_functions/">Python Functions</a>
@@ -131,7 +133,7 @@
                           <a class="dropdown-item" href="/courses/python/python_fileopen/">Python File Open</a>
                           <a class="dropdown-item" href="/courses/python/python_filewritecreate/">Python File Write/Create</a>
                           <a class="dropdown-item" href="/courses/python/python_filedel/">Python File Delete</a>
-                        
+
                         </div>
                     </li>
                     <li class="nav-item">
@@ -146,7 +148,7 @@
        <div class="container">
       <div>
             <div class="row">
-               <div class="col-md-12"> 
+               <div class="col-md-12">
                     <div class="">
                         <h1>{{ h1 }}</h1>
                         <ul class="pager navbar-fixed-bottom ">
@@ -169,52 +171,57 @@
         </div>
     </main>
 
-    <footer class="bg-primary text-center ">
-        <div class="container p-4">
+  <!-- Footer -->
+    <footer class="bg-dark text-center text-light py-4">
+        <div class="container">
+
+            <!-- Social Media Section -->
             <section class="mb-4">
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" target='_blank' href="https://www.facebook.com/profile.php?id=61555241895001" role="button"><i class="fab fa-facebook-f"></i></a>
-        <!-- Github -->
-        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333"  target='_blank'href="https://github.com/asahlumaty1ka" role="button"><i class="fab fa-github"></i></a>
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" target='_blank' href="https://www.facebook.com/profile.php?id=61555241895001" role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" target='_blank' href="https://github.com/asahlumaty1ka" role="button"><i class="fab fa-github"></i></a>
             </section>
-            <section class="">
+
+            <!-- Links Section -->
+            <section>
                 <div class="row">
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                         <h5 class="text-uppercase">Links</h5>
                         <ul class="list-unstyled mb-0">
-              <li>
-                <a href="{% url 'index' %}" class="text-dark">Home</a>
-              </li>
-              <li>
-                <a href="{% url 'courses' %}" class="text-dark">Courses</a>
-              </li>
-              <li>
-                <a href="{% url 'about' %}" class="text-dark">About</a>
-              </li>
+                            <li>
+                                <a href="{% url 'index' %}" class="text-light">Home</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'courses' %}" class="text-light">Courses</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'about' %}" class="text-light">About</a>
+                            </li>
                         </ul>
                     </div>
+
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                         <h4 class="text-uppercase">Courses</h4>
                         <ul class="list-unstyled mb-0">
-                             
-                                          <li>
-                <a href="{% url 'coursespy' %}" class="text-dark">Python</a>
-              </li>
+                            <li>
+                                <a href="{% url 'coursespy' %}" class="text-light">Python</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                </div>
-            </div>
-          </div>
             </section>
         </div>
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
             &copy; 2024 Copyright:
-            <a class="text-dark" href="/">TeekaY-X.com</a>
+            <a class="text-light" href="/">TeekaY-X.com</a>
         </div>
     </footer>
 
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  
+
 </body>
 
 </html>

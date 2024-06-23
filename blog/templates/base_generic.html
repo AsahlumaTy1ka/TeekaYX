@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/icon.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/icon.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380855255756665"
+     crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 800px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-img-top {
+            border-radius: 0;
+            max-height: 290px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .text-muted {
+            font-size: 0.875rem;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+
+        pre {
+            color: #ffffff;
+            background-color: #2d2d2d;
+            padding: 1em; /* Optional: Add some padding for better readability */
+            border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+            overflow: auto; /* Ensure code blocks are scrollable if too long */
+        }
+
+        code[class*="language-"], pre[class*="language-"] {
+            color: #f8f8f2; /* Default code text color */
+            background: none;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #1e1e1e;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #d4d4d4;
+            line-height: 1.6;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #d4d4d4;
+        }
+
+        .btn-primary:hover {
+            background-color: #ffffff; /* White background on hover */
+            border-color: #ffffff; /* White border on hover */
+            color: #000000; /* Text color on hover */
+        }
+
+        .btn-primary {
+            background-color: #333333; /* Slightly lighter black */
+            border-color: #333333;
+            color: #ffffff; /* Text color to ensure visibility */
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            object-position: center; /* Optional: centers the image */
+        }
+
+        .card {
+            background-color: #2d2d2d;
+            color: #d4d4d4;
+        }
+
+        .card .card-title, .card .card-text {
+            color: #d4d4d4;
+        }
+
+        .small.text-muted {
+            color: #9a9a9a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">TeekaY-X</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'courses' %}">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <div class="row">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-light py-4">
+        <div class="container">
+            <!-- Social Media Section -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" target='_blank' href="https://www.facebook.com/profile.php?id=61555241895001" role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" target='_blank' href="https://github.com/asahlumaty1ka" role="button"><i class="fab fa-github"></i></a>
+            </section>
+
+            <!-- Links Section -->
+            <section>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="{% url 'index' %}" class="text-light">Home</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'courses' %}" class="text-light">Courses</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'about' %}" class="text-light">About</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h4 class="text-uppercase">Courses</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="{% url 'coursespy' %}" class="text-light">Python</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            &copy; 2024 Copyright:
+            <a class="text-light" href="/">TeekaY-X.com</a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
