@@ -23,11 +23,16 @@ class CoursePage(models.Model):
     title = models.CharField(max_length=200)
     content = MarkdownxField()
     slug = models.SlugField(unique=True, blank=True)
+    order = models.PositiveIntegerField(default=0)
 
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+
+    class Meta:
+        ordering = ['order']
 
     def __str__(self):
         return f"{self.course.title} - {self.title}"

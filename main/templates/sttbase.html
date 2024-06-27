@@ -48,7 +48,7 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="coursesDropdown">
                                         {% for page in current_course.pages.all %}
-				        <a href="{{ page.get_absolute_url }}" class="dropdown-item">{{ page.title }} &raquo;</a><br>
+				        <a href="{{ page.get_absolute_url }}" class="dropdown-item">{{ page.title }}</a>
 					{% endfor %}
                                     </div>
                                 </li>
@@ -65,19 +65,37 @@
                             <div class="col-md-12">
                                 <div class="">
                                     <h1>{{ h1 }}</h1>
-                                    <ul class="pager navbar-fixed-bottom ">
-                                        <li class="btn btn-primary float-left"><a href="{{prev}}">&laquo;Previous</a></li>
-                                        <li class="btn btn-primary float-right {{ clas }} "><a href="{{next}}">Next&raquo;</a></li>
+                                
+                                    <ul class="pager navbar-fixed-bottom">
+                                        {% if prev_page %}
+                                            <li class="btn btn-primary float-left"><a href="{{ prev_page.get_absolute_url }}">&laquo; Previous</a></li>
+                                        {% else %}
+                                            <li class="btn btn-primary float-left disabled">&laquo; Previous</li>
+                                        {% endif %}
+                                        {% if next_page %}
+                                            <li class="btn btn-primary float-right"><a href="{{ next_page.get_absolute_url }}">Next &raquo;</a></li>
+                                        {% else %}
+                                            <li class="btn btn-primary float-right disabled">Next &raquo;</li>
+                                        {% endif %}
                                     </ul>
-                                    <br>
+				    <br>
                                     <hr>
                                     {% block content %}
                                     {% endblock %}
+                                   
                                     <ul class="pager navbar-fixed-bottom">
-                                        <li class="btn btn-primary float-left"><a href="{{prev}}">&laquo;Previous</a></li>
-                                        <li class="btn btn-primary float-right {{ clas }} "><a href="{{next}}">Next&raquo;</a></li>
-                                    </ul>
-                                    <br>
+                                        {% if prev_page %}
+                                            <li class="btn btn-primary float-left"><a href="{{ prev_page.get_absolute_url }}">&laquo; Previous</a></li>
+                                        {% else %}
+                                            <li class="btn btn-primary float-left disabled">&laquo; Previous</li>
+                                        {% endif %}
+                                        {% if next_page %}
+                                            <li class="btn btn-primary float-right"><a href="{{ next_page.get_absolute_url }}">Next &raquo;</a></li>
+                                        {% else %}
+                                            <li class="btn btn-primary float-right disabled">Next &raquo;</li>
+                                        {% endif %}
+                                    </ul> 
+				   <br>
                                 </div>
                             </div>
                         </div>
