@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Courses | Home {% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h1 class="mb-4">Courses</h1>
+  {% for course in courses %}
+    <div class="card mb-4">
+      {% if course.banner_image %}
+        <img src="{{ course.banner_image.url }}" class="card-img-top" alt="{{ course.title }}">
+      {% endif %}
+      <div class="card-body">
+        <h2 class="card-title">{{ course.title }}</h2>
+        <p class="card-text">{{ course.list_description|truncatechars:120 }}</p>
+        <a href="{% url 'course-detail' course.slug %}" class="btn btn-primary">Read More &raquo;</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

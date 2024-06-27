@@ -2,6 +2,33 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 from django.urls import reverse
+from django.shortcuts import render, get_object_or_404
+from .models import Course, CoursePage
+
+def course_list(request):
+    courses = Course.objects.all()
+    return render(request, 'courses/course_index.html', {'courses': courses})
+
+def course_detail(request, slug):
+    course = get_object_or_404(Course, slug=slug)
+    courses = Course.objects.all()
+    return render(request, 'courses/course_detail.html', {
+        'course': course,
+        'all_courses': courses,
+        'current_course': course,
+    })
+
+def course_page_detail(request, course_slug, page_slug):
+    course = get_object_or_404(Course, slug=course_slug)
+    page = get_object_or_404(CoursePage, course=course, slug=page_slug)
+    courses = Course.objects.all()
+    return render(request, 'courses/course_page_detail.html', {
+        'course': course,
+        'page': page,
+        'all_courses': courses,
+        'current_course': course,
+    })
+
 
 def index(request):
     return render(request, 'index.html')

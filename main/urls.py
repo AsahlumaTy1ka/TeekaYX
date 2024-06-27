@@ -7,7 +7,11 @@ admin.site.site_title = "TeekaYX | Admin"
 admin.site.site_header = "TeekaYX | Administration"
 admin.site.index_title = "Site administration"
 
+
 urlpatterns = [
+    path('courses/', views.course_list, name='course-list'),
+    path('courses/<slug:slug>/', views.course_detail, name='course-detail'),
+    path('courses/<slug:course_slug>/<slug:page_slug>/', views.course_page_detail, name='course-page-detail'),
     path('courses/python/introduction/', views.pythonintro, name='pythonintro'),
     path('courses/python/getting_started/', views.pythonstart, name='pythonstart'),
     path('courses/python/python_syntax/', views.pythonsyntax, name='pythonsyntax'),
@@ -48,7 +52,7 @@ urlpatterns = [
     path('courses/python/python_filewritecreate/', views.pythonfilewritecreate, name='pythonfilewritecreate'),
     path('courses/python/python_filedel/', views.pythonfiledel, name='pythonfiledel'),
     path('courses/python/', views.coursespy,name='coursespy'),
-    path('courses/', views.courses, name='courses'),
+#    path('courses/', views.courses, name='courses'),
     path('about/', views.about, name='about'),
     path('', views.index, name='index'),
 
