@@ -35,7 +35,7 @@ def index(request):
 
 def about(request):
     return render(request, 'about.html')
-
+'''
 
 def courses(request):
     return render(request, 'courses/index.html')
@@ -281,15 +281,5 @@ def pythonfiledel(request):
     next = ''
     clas = 'disabled'
     return render(request, 'courses/python/filedel.html', {'h1': h1, 'prev': prev, 'next': next, 'clas': clas})
-
-'''
-JAVASCRIPT
-IS 
-THE 
-KING
-OF
-THE 
-WEB
-
 
 '''
