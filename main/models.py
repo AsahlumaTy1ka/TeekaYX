@@ -21,7 +21,7 @@ class Course(models.Model):
 class CoursePage(models.Model):
     course = models.ForeignKey(Course, related_name='pages', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    content = MarkdownxField()
+    content = models.TextField()
     slug = models.SlugField(unique=True, blank=True)
     order = models.PositiveIntegerField(default=0)
 
