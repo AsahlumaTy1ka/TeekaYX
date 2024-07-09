@@ -11,7 +11,7 @@
       <div class="card-body">
         <h2 class="card-title">{{ course.title }}</h2>
         <p class="card-text">{{ course.list_description|truncatechars:120 }}</p>
-        <a href="{% url 'course-detail' course.slug %}" class="btn btn-primary">Read More &raquo;</a>
+        <a href="{% url 'course-detail' course.slug %}" class="btn btn-primary">Enroll &raquo;</a>
       </div>
     </div>
   {% endfor %}
