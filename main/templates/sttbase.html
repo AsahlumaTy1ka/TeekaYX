@@ -12,15 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4380855255756665" crossorigin="anonymous"></script>
-<style>
-pre {
+    <style>
+        pre {
             color: #ffffff;
             background-color: #2d2d2d;
             padding: 1em;
             border-radius: 5px;
             overflow: auto;
         }
-</style>
+    </style>
 </head>
 
 <body>
@@ -30,7 +30,7 @@ pre {
         <h2 class="left">{{ current_course.title }} Tutorial</h2>
         <a target="_top" href="{% url 'course-detail' slug=current_course.slug %}">{{ current_course.title }} HOME</a>
         {% for page in current_course.pages.all %}
-            <a class="dropdown-item" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+        <a class="dropdown-item" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
         {% endfor %}
         {% endif %}
         <br><br>
@@ -57,12 +57,21 @@ pre {
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="coursesDropdown">
                                         {% for page in current_course.pages.all %}
-				        <a href="{{ page.get_absolute_url }}" class="dropdown-item">{{ page.title }}</a>
-					{% endfor %}
+                                        <a href="{{ page.get_absolute_url }}" class="dropdown-item">{{ page.title }}</a>
+                                        {% endfor %}
                                     </div>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'about' %}">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'terms' %}">Terms</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'privacy-policy' %}">Privacy Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contact-us' %}">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -74,37 +83,35 @@ pre {
                             <div class="col-md-12">
                                 <div class="">
                                     <h1>{{ h1 }}</h1>
-                                
                                     <ul class="pager navbar-fixed-bottom">
                                         {% if prev_page %}
-                                            <li class="btn btn-primary float-left"><a href="{{ prev_page.get_absolute_url }}">&laquo; Previous</a></li>
+                                        <li class="btn btn-primary float-left"><a href="{{ prev_page.get_absolute_url }}">&laquo; Previous</a></li>
                                         {% else %}
-                                            <li class="btn btn-primary float-left disabled">&laquo; Previous</li>
+                                        <li class="btn btn-primary float-left disabled">&laquo; Previous</li>
                                         {% endif %}
                                         {% if next_page %}
-                                            <li class="btn btn-primary float-right"><a href="{{ next_page.get_absolute_url }}">Next &raquo;</a></li>
+                                        <li class="btn btn-primary float-right"><a href="{{ next_page.get_absolute_url }}">Next &raquo;</a></li>
                                         {% else %}
-                                            <li class="btn btn-primary float-right disabled">Next &raquo;</li>
+                                        <li class="btn btn-primary float-right disabled">Next &raquo;</li>
                                         {% endif %}
                                     </ul>
-				    <br>
+                                    <br>
                                     <hr>
                                     {% block content %}
                                     {% endblock %}
-                                   
                                     <ul class="pager navbar-fixed-bottom">
                                         {% if prev_page %}
-                                            <li class="btn btn-primary float-left"><a href="{{ prev_page.get_absolute_url }}">&laquo; Previous</a></li>
+                                        <li class="btn btn-primary float-left"><a href="{{ prev_page.get_absolute_url }}">&laquo; Previous</a></li>
                                         {% else %}
-                                            <li class="btn btn-primary float-left disabled">&laquo; Previous</li>
+                                        <li class="btn btn-primary float-left disabled">&laquo; Previous</li>
                                         {% endif %}
                                         {% if next_page %}
-                                            <li class="btn btn-primary float-right"><a href="{{ next_page.get_absolute_url }}">Next &raquo;</a></li>
+                                        <li class="btn btn-primary float-right"><a href="{{ next_page.get_absolute_url }}">Next &raquo;</a></li>
                                         {% else %}
-                                            <li class="btn btn-primary float-right disabled">Next &raquo;</li>
+                                        <li class="btn btn-primary float-right disabled">Next &raquo;</li>
                                         {% endif %}
-                                    </ul> 
-				   <br>
+                                    </ul>
+                                    <br>
                                 </div>
                             </div>
                         </div>
@@ -135,6 +142,15 @@ pre {
                                         <li>
                                             <a href="{% url 'about' %}" class="text-light">About</a>
                                         </li>
+                                        <li>
+                                            <a href="{% url 'terms' %}" class="text-light">Terms</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'privacy-policy' %}" class="text-light">Privacy Policy</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'contact-us' %}" class="text-light">Contact Us</a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -153,13 +169,13 @@ pre {
                         <a class="text-light" href="/">TeekaY-X.com</a>
                     </div>
                 </footer>
-</div>
+            </div>
         </div>
     </div>
- <script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>           
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

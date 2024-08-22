@@ -1,29 +1,27 @@
-
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}About Us - TeekaY-X{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
-    <div class="row">
+    <div class="row align-items-center">
         <div class="col-md-6">
-            <img src="{% static "images/about.jpeg" %}" alt="About Us" class="img-fluid rounded-circle">
+            <img src="{% static 'images/about.jpeg' %}" alt="About Us" class="img-fluid rounded-circle shadow-sm mb-4">
         </div>
         <div class="col-md-6">
-            <h1 class="display-4">About Us</h1>
-
-            <p>We're passionate about programming and education. Our mission is to make learning how to code accessible and enjoyable for everyone.</p>
+            <h1 class="display-4 font-weight-bold">About Us</h1>
+            <p class="lead">We're passionate about programming and education. Our mission is to make learning how to code accessible and enjoyable for everyone.</p>
             <p>With a team of experienced instructors and a commitment to excellence, we offer a range of courses designed to help you succeed in the world of programming.</p>
-            <p>Join us on this exciting journey of knowledge and discovery!</p>
+            <p>Join us on this exciting journey of knowledge and discovery! If you have any questions or need more information, feel free to <a href="{% url 'contact-us' %}" class="text-decoration-none">contact us</a>.</p>
         </div>
     </div>
 </div>
 
 <div class="container mt-5">
-    <h2 class="text-center">Why Choose Us?</h2>
+    <h2 class="text-center font-weight-bold mb-5">Why Choose Us?</h2>
     <div class="row">
         <div class="col-md-4">
-            <div class="card mb-4">
+            <div class="card mb-4 shadow-sm">
                 <img src="{% static 'images/exp.jpeg' %}" class="card-img-top" alt="Experienced Instructors">
                 <div class="card-body">
                     <h5 class="card-title">Experienced Instructors</h5>
@@ -31,8 +29,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card mb-4">
+        <div  class="col-md-4">
+            <div class="card mb-4 shadow-sm">
                 <img src="{% static 'images/interactive.jpeg' %}" class="card-img-top" alt="Interactive Learning">
                 <div class="card-body">
                     <h5 class="card-title">Interactive Learning</h5>
@@ -41,7 +39,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card mb-4">
+            <div class="card mb-4 shadow-sm">
                 <img src="{% static 'images/success.jpeg' %}" class="card-img-top" alt="Success-Oriented">
                 <div class="card-body">
                     <h5 class="card-title">Success-Oriented</h5>
